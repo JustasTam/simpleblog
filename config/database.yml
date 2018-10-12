@@ -1,0 +1,24 @@
+default: &default
+  adapter: mysql2
+  host: localhost
+  database: simpleblog_dev
+  username: justas
+  password: password
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: simpleblog_dev
+
+test:
+  <<: *default
+  database: simpleblog_test
+
+production:
+  <<: *default
+  database: simpleblog_prod
+
+
+# root/zaza1234
+# justas/password
